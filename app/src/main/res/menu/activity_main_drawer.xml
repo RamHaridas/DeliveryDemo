@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_car"
+            android:title="Your Booking" />
+
+        <item
+            android:id="@+id/nav_offers"
+            android:icon="@drawable/ic_offers"
+            android:title="Offers" />
+
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="Settings" />
+
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/ic_help"
+            android:title="Help" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_share"
+            android:title="Share" />
+        <item
+            android:id="@+id/nav_del"
+            android:icon="@drawable/ic_delivery_boy"
+            android:title="Become a Delivery Boy" />
+        <item
+            android:id="@+id/nav_terms"
+            android:icon="@drawable/ic_terms"
+            android:title="Terms and Condition" />
+        <item
+            android:id="@+id/nav_details"
+            android:icon="@drawable/ic_info"
+            android:title="About us"/>
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="Logout" />
+    </group>
+</menu>

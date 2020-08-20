@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.white.delivery.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_nav_home_to_orderDetailsFragment"
+            app:destination="@id/orderDetailsFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_nav_home_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderDetailsFragment"
+        android:name="com.white.delivery.ui.home.OrderDetailsFragment"
+        android:label="OrderDetailsFragment" >
+        <argument android:name="packageType"
+                android:defaultValue="none"
+            />
+        <argument android:name="distance"
+            android:defaultValue="none"
+            />
+        <action
+            android:id="@+id/action_orderDetailsFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_orderDetailsFragment_to_pendingFragment"
+            app:destination="@id/nav_pending"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="true"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.white.delivery.ui.home.PaymentFragment"
+        android:label="PaymentFragment" >
+        <argument android:name="cost"
+            android:defaultValue="none"/>
+        <action
+            android:id="@+id/action_paymentFragment_to_nav_home"
+            app:destination="@id/nav_home"
+            app:popUpToInclusive="true"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.white.delivery.ui.gallery.GalleryFragment"
+        android:label="ORDERS"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.white.delivery.ui.slideshow.HelpFragment"
+        android:label="HELP"
+        tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@+id/nav_help"
+        android:name="com.white.delivery.ui.slideshow.HelpFragment"
+        android:label="HELP"
+        tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.white.delivery.ui.settings.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_nav_settings_to_nav_change_password"
+            app:destination="@id/nav_change_password" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_offers"
+        android:name="com.white.delivery.ui.offers.OffersFragment"
+        android:label="Offers"
+        tools:layout="@layout/fragment_offers"/>
+
+    <fragment android:id="@+id/nav_pending"
+        android:name="com.white.delivery.ui.home.PendingFragment"
+        tools:layout="@layout/fragment_pending"
+        android:label="Searching...">
+        <action
+            android:id="@+id/action_pending_to_driver"
+            app:destination="@id/nav_driver"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_nav_pending_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_driver"
+        android:name="com.white.delivery.ui.home.DriverIncoming"
+        android:label="On the way"
+        tools:layout="@layout/fragment_driver_incoming">
+        <action
+            android:id="@+id/action_nav_driver_to_nav_home"
+            app:destination="@id/nav_home"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/to_complete"
+            app:destination="@+id/nav_complete"/>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_change_password"
+        android:name="com.white.delivery.ui.settings.ChangePassword"
+        android:label="Change password"
+        tools:layout="@layout/fragment_change_password"/>
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.white.delivery.ui.home.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/action_mapFragment_to_nav_home"
+            app:destination="@id/nav_home"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_details"
+        android:name="com.white.delivery.InfoFragment"
+        tools:layout="@layout/fragment_info"
+        android:label="About us"/>
+
+    <fragment
+        android:id="@+id/nav_complete"
+        android:name="com.white.delivery.CompleteFragment"
+        android:label="COMPLETED"
+        tools:layout="@layout/fragment_complete">
+        <action
+            android:id="@+id/action_complete_to_home"
+            app:destination="@+id/nav_home"/>
+    </fragment>
+</navigation>

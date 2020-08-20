@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#FFF"
+    android:orientation="vertical"
+    tools:context=".ui.home.PendingFragment">
+
+    <!--<pl.droidsonroids.gif.GifImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gif"
+        android:src="@drawable/search"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"/>-->
+    <!--<com.example.delivery.ui.home.GifImageView
+        android:id="@+id/gif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />-->
+<!--    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="12dp"
+        android:background="@android:color/white"
+        android:id="@+id/gif"/>-->
+   <androidx.core.widget.ContentLoadingProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_gravity="center"
+       android:id="@+id/progress"
+       android:layout_centerInParent="true"
+        android:layout_margin="16dp"/>
+    <Button
+        android:id="@+id/cancel_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progress"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/orange_ripple"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="40dp"
+        android:text="Cancel"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/progress"
+        android:text="*Long searches might result due to unavailability of drivers"
+        />
+
+</RelativeLayout>
