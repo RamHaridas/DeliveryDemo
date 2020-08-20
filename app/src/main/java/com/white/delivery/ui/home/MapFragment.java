@@ -85,7 +85,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         select_add = view.findViewById(R.id.select_address);
         address = view.findViewById(R.id.address);
         searchView = view.findViewById(R.id.search);
-        Places.initialize(view.getContext(), "AIzaSyDVpo7xTz7wk5tS4JMMRSXFwbu_6iZho-o");
+        Places.initialize(view.getContext(), "YOUR KEY HERE");
         PlacesClient placesClient = Places.createClient(getContext());
         mapView = view.findViewById(R.id.mapView2);
         mapView.getMapAsync(MapFragment.this);
